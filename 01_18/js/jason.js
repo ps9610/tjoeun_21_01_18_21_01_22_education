@@ -649,7 +649,7 @@
             if( $winW>1200 ){
                 n=3;
             }
-            else if( $winW>860){
+            else if( $winW>600){
                 n=2;
             }
             else{

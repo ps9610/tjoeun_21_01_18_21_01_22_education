@@ -310,7 +310,7 @@
 #wrap #join #section1 .wrap .gap .container .title {text-align:center;display:table-cell;vertical-align:middle;}
 #wrap #join #section1 .wrap .gap .container .title > h2 {font-size:80px;color:#fff;font-family:'Times New Roman', Times, serif;}
 
-#wrap #join #section2 {width:100%;height:auto;background:#fff;padding:100px 0;}
+#wrap #join #section2 {width:100%;height:auto;background:#fff;padding:5.31914894%/* 100px */ 0;}
 #wrap #join #section2 .wrap {width:100%;max-width:1570px;margin:0 auto;}
 #wrap #join #section2 .wrap .gap {width:auto;height:100%;margin:0 20px;}
 #wrap #join #section2 .wrap .gap .container {width:100%;}
@@ -326,23 +326,23 @@
 #wrap #join #section2 .wrap .gap .container .content > ul > li .content-gap .title {width:100%;}
 #wrap #join #section2 .wrap .gap .container .content > ul > li .content-gap .title > h3 {color:#222;font-size:20px;margin-bottom:15px;}
 #wrap #join #section2 .wrap .gap .container .content > ul > li .content-gap .title > h2 {color:#2e3192;font-size:55px;}
-#wrap #join #section2 .wrap .gap .container .content > ul > li .content-gap > h2 {margin:30px 0 15px 0;font-size:20px;color:#000;font-weight:600;}
-#wrap #join #section2 .wrap .gap .container .content > ul > li .content-gap > p {margin-bottom:15px;padding:20px;height:120px;border:1px solid #ddd;overflow-y:scroll;font-size:16px;line-height:24px;}
-#wrap #join #section2 .wrap .gap .container .content > ul > li .content-gap > div {margin-bottom:30px;}
+#wrap #join #section2 .wrap .gap .container .content > ul > li .content-gap > h2 {margin:2.88461538% 0 1.44230769% 0/* 30px 0 15px 0 */;font-size:20px;color:#000;font-weight:600;}
+#wrap #join #section2 .wrap .gap .container .content > ul > li .content-gap > p {margin-bottom:1.44230769%;/* 15px; */padding:1.92307692%/* 20px */;height:120px;border:1px solid #ddd;overflow-y:scroll;font-size:16px;line-height:150%;}
+#wrap #join #section2 .wrap .gap .container .content > ul > li .content-gap > div {margin-bottom:2.88461538%/* 30px; */}
 #wrap #join #section2 .wrap .gap .container .content > ul > li .content-gap > div > input[type="checkbox"] {display:inline-block;color:#ddd;background:#fff;width:20px;height:20px;margin-right:2px;font-size:14px;}
-#wrap #join #section2 .wrap .gap .container .content > ul > li .content-gap > div > a {display:inline-block;font-size:15px;color:#da2128;line-height:20.8px;}
+#wrap #join #section2 .wrap .gap .container .content > ul > li .content-gap > div > a {display:inline-block;font-size:15px;color:#da2128;line-height:139%/* 20.8px */;}
 #wrap #join #section2 .wrap .gap .container .content > ul > li .content-gap > div > a > label {color:#222;}
-#wrap #join #section2 .wrap .gap .container .content > ul > li .content-gap > table {margin-bottom:15px;width:100%;border-collapse:collapse;border-top:1px solid #ddd;border-left:1px solid #ddd;}
+#wrap #join #section2 .wrap .gap .container .content > ul > li .content-gap > table {margin-bottom:1.44230769%/* 15px */;width:100%;border-collapse:collapse;border-top:1px solid #ddd;border-left:1px solid #ddd;}
 #wrap #join #section2 .wrap .gap .container .content > ul > li .content-gap > table > tbody {width:100%;}
 #wrap #join #section2 .wrap .gap .container .content > ul > li .content-gap > table > tbody > tr {border-bottom:1px solid #ddd;}
-#wrap #join #section2 .wrap .gap .container .content > ul > li .content-gap > table > tbody > tr > th {text-align:center;font-size:14px;border-bottom:1px solid #ddd;border-right:1px solid #ddd;color:#777;background:#f4f4f4;padding:17px 10px;}
-#wrap #join #section2 .wrap .gap .container .content > ul > li .content-gap > table > tbody > tr > td {text-align:center;font-size:14px;border-bottom:1px solid #ddd;border-right:1px solid #ddd;color:#777;background:#fff;padding:15px 5px;}
-#wrap #join #section2 .wrap .gap .container .content > ul > li .content-gap > table > tbody > tr > td:nth-child(1) {width:510px;}
-#wrap #join #section2 .wrap .gap .container .content > ul > li .content-gap > table > tbody > tr > td:nth-child(2) {width:248px;}
-#wrap #join #section2 .wrap .gap .container .content > ul > li .content-gap > table > tbody > tr > td:nth-child(3) {width:248px;}
+#wrap #join #section2 .wrap .gap .container .content > ul > li .content-gap > table > tbody > tr > th {text-align:center;font-size:14px;border-bottom:1px solid #ddd;border-right:1px solid #ddd;color:#777;background:#f4f4f4;padding:1.63% 0.96%/* 17px 10px */;}
+#wrap #join #section2 .wrap .gap .container .content > ul > li .content-gap > table > tbody > tr > td {text-align:center;font-size:14px;border-bottom:1px solid #ddd;border-right:1px solid #ddd;color:#777;background:#fff;padding:1.43953935% 0.48%/* 15px 5px */;}
+#wrap #join #section2 .wrap .gap .container .content > ul > li .content-gap > table > tbody > tr > td:nth-child(1) {width:50.14%/* 510px */;}
+#wrap #join #section2 .wrap .gap .container .content > ul > li .content-gap > table > tbody > tr > td:nth-child(2) {width:24.9%;/* 248px; */}
+#wrap #join #section2 .wrap .gap .container .content > ul > li .content-gap > table > tbody > tr > td:nth-child(3) {width:24.9%;/* 248px; */}
 #wrap #join #section2 .wrap .gap .container .content > ul > li:nth-child(4) .content-gap > div {border:1px solid #ddd;}/* 라벨이랑 인풋박스 둘 다 묶어주는 */
 #wrap #join #section2 .wrap .gap .container .content > ul > li:nth-child(4) .content-gap > div:nth-child(6) {margin:0}
-#wrap #join #section2 .wrap .gap .container .content > ul > li:nth-child(4) .content-gap > div > input {display:inline-block;width:873px;border:0;padding:10px 15px;}
+#wrap #join #section2 .wrap .gap .container .content > ul > li:nth-child(4) .content-gap > div > input {display:inline-block;width:81.00509615%/* 873px */;border:0;padding:0.96153846% 1.44230769%;/* 10px 15px */;}
 #wrap #join #section2 .wrap .gap .container .content > ul > li:nth-child(4) .content-gap > div:nth-child(8) #address {display:inline-block;width:730px;}
 #wrap #join #section2 .wrap .gap .container .content > ul > li:nth-child(4) .content-gap > div:nth-child(8) #findAddress {display:inline-block;width:130px;}
 #wrap #join #section2 .wrap .gap .container .content > ul > li:nth-child(4) .content-gap > div > label {display:inline-block;width:130px;padding:10px 15px;border-right:1px solid #ddd;}
@@ -376,7 +376,7 @@
 #wrap #main1-1 #section1 .wrap .gap .container .title {display:table-cell;text-align:center;vertical-align:middle;}
 #wrap #main1-1 #section1 .wrap .gap .container .title > h2 {font-size:65px;color:#fff;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-weight:800;}
 
-#wrap #main1-1 #section2 {width:100%;height:auto;background:#fff;padding:100px 0;}
+#wrap #main1-1 #section2 {width:100%;height:auto;background:#fff;padding:5.31914894%/* 100px */ 0;}
 #wrap #main1-1 #section2 .wrap {width:100%;max-width:1570px;margin:0 auto;}
 #wrap #main1-1 #section2 .wrap .gap {width:auto;height:100%;}
 #wrap #main1-1 #section2 .wrap .gap .container {width:100%;}
