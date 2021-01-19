@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/vue/jquery-1.12.4.min.js"></script>
+    <script src="./js/vue/vue.js"></script>
+    <style>
+        body {text-align:center;}
+    </style>
+</head>
+<body>
+    <h1>v-on (디렉티브) 사용하기</h1>
+    <!-- 버튼을 클릭해서 h2 요소 안에 txt 변수에 메세지 출력하기 -->
+    <div id="app">
+        <h2>{{ txt }}</h2>
+        <button v-on:click="clickFn">클릭 하세요!</button>
+        <!-- html에서 함수 불러올때는 괄호 안쓰고 이름만 씀 -->
+    </div>
+    <script>
+        let a;
+
+        //data : {} -> 기본 바인딩
+        //methods : {} -> 메소드에서 함수 호출 사용
+        const app = new Vue({
+            el : "#app",
+            data : {
+                txt : "기본 메시지 출력 내용입니다. 버튼을 클릭하세요. ^^"
+            },
+            methods : {
+                clickFn : function(){
+                    //split("  ") = 따옴표 안의 내용을 분리시킴;(띄어쓰기)
+                    //split(",") = 따옴표 안의 내용을 분리시킴;(콤마)
+                    //split("/") = 따옴표 안의 내용을 분리시킴;(슬래쉬)
+                    a = this.txt.split(" ");
+                    console.log(a);
+                    this.txt = a[6];
+                }
+            }
+            
+        });
+    </script>
+</body>
+</html>

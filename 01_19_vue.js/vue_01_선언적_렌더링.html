@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/vue/jquery-1.12.4.min.js"></script>
+    <script src="./js/vue/vue.js"></script>
+    <style>
+        body {text-align:center;}
+    </style>
+</head>
+<body>
+    <h1>선언적 렌더링</h1>
+    <br>
+    <br>
+    <!-- 1. DOM 요소 태그 -->
+    <div id="app">{{vueMessage}}</div> <!-- 뷰는 중괄호 두개, 띄어쓰기 하지말고 카멜표기법!!!!!!! -->
+
+    <!-- 2. 스크립트 - Vue.js : Vue() 객체(Vue는 객체형식의 함수) -->
+    <script>
+        //const(ECMA6)는 고정된(값이 변하지 않음) 변수에 사용-> 재사용 불가능 
+        //let(ECMA6)은 고정되지 않은(값이 변함) 변수에 사용 -> 재사용 불가능 | var(ECMA5)와 비슷 -> 재사용 가능
+
+        // vue.js는 선언적 렌더링
+        // const app = {}; // 객체의 생성자 방식(리터럴함수)와 똑같은 방식
+        // Vue에서 V만 대문자로 쓰게 설정되어있음
+        //el = 엘리먼트(요소), 선택 요소 id를 #이랑 입력해줌
+
+        const app = new Vue({
+            //el:연결아이디(id)
+            el : "#app",
+            data : {
+                vueMessage : "프레임워크 Vue.js 웹앱 개발 메시지 보내기"
+            }
+        });
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/vue/jquery-1.12.4.min.js"></script>
+    <script src="./js/vue/vue.js"></script>
+    <style>
+        body {text-align:center;}
+    </style>
+</head>
+<body>
+
+    <h1>동적바인딩 v-bind</h1>
+    <h2 id="app">
+        <span v-bind:title="msg">마우스를 올리세요.</span>
+    </h2>
+
+    <script>
+        const app = new Vue({
+            el : "#app span",
+            data : {
+                msg : "v-bind 마우스 오버시 타이틀에 메시지 내용 띄우기"
+            }
+        });
+    </script>
+
+</body>
+</html>
