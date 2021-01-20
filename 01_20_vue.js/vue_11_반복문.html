@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue 반복문</title>
+    <script src="./js/lib/jquery-1.12.4.min.js"></script>
+    <script src="./js/vue/vue.js"></script>
+    
+    <style>
+        #app {width:200px;line-height:170%;text-align:center;margin:0 auto;}
+    </style>
+</head>
+<body>
+    <h1>Vue 반복문</h1>
+    <div id="app">
+        <ol>
+            <!-- 객체를 등록해서 반복문 설정하기 | 메쉬태그를 이용하여 바인딩  -->
+            <li v-for="i in addr">{{i, i.이름}}</li> 
+            <!-- addr을 반복해서 뽑아라, {{i.이름 = ""안의 이름만 나옴}} {{i, i.이름 = key : key value}} -->
+        </ol>
+        <script>
+            const app = new Vue({
+                el : "#app",
+                data : {
+                    addr:[
+                        {이름:"이순신"},
+                        {이름:"김유신"},
+                        {이름:"유관신"},
+                        {이름:"김좌진"},
+                        {이름:"박재룡"},
+                        {이름:"강감찬"},
+                        {이름:"유지언"},
+                        {이름:"이수정"}
+                    ]
+                },
+
+            });
+        </script>
+    </div>
+</body>
+</html>

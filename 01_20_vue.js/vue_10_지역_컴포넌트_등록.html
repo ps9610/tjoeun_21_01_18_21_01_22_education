@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue 지역 컴포넌트 등록</title>
+    <script src="./js/lib/jquery-1.12.4.min.js"></script>
+    <script src="./js/vue/vue.js"></script>
+    
+    <style>
+        #app {width:800px;line-height:170%;margin:0 auto;text-align:center;}
+    </style>
+</head>
+<body>
+    <h1>Vue 지역(local) 컴포넌트 등록</h1>
+    <div id="app">
+        <comp1></comp1>
+        <comp2></comp2>
+        <comp3></comp3>
+        <comp4></comp4>
+        <comp5></comp5>
+        <comp6></comp6>
+    </div>
+    <script>
+        // 지역 컴포넌트 생성 방법
+            // 1. 컴포넌트를 내부에 등록 
+                // ㄴ>components : {
+                //    "comp" : cp
+                //    }
+            //2. let cp를 객체화 시켜줌
+        let cp1 = { //객체 만들어줌 = 중괄호 사용
+            template : `<h1><mark>지역 컴포넌트의 템플릿 요소 내용!</mark></h1>` //Vue에선 따옴표보다 백틱을 사용하기
+        }
+        let cp2 = {
+            template : `<h2><mark>지역 컴포넌트의 템플릿 요소 내용!</mark></h2>`}
+        let cp3 = {
+            template : `<h3><mark>지역 컴포넌트의 템플릿 요소 내용!</mark></h3>`}
+        let cp4 = {
+            template : `<h4><mark>지역 컴포넌트의 템플릿 요소 내용!</mark></h4>`}
+        let cp5 = {
+            template : `<h5><mark>지역 컴포넌트의 템플릿 요소 내용!</mark></h5>`}
+        let cp6 = {
+            template : `<h6><mark>지역 컴포넌트의 템플릿 요소 내용!</mark></h6>`}
+        //컴포넌트 등록 방법 -> data 등록하듯이 똑같이 하면 됨
+        const obj = new Vue({
+            el : "#app",
+            components : { //component를 안에다가 components라는 메소드로 만든것이 특징
+                "comp1" : cp1, //구성 = 컴포넌트 : 템플릿트 
+                "comp2" : cp2,
+                "comp3" : cp3,
+                "comp4" : cp4,
+                "comp5" : cp5,
+                "comp6" : cp6
+            },
+        });
+    </script>
+</body>
+</html>

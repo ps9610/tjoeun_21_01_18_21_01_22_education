@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue 컴포넌트 등록, 템플릿트 내용 추가하기</title>
+    <script src="./js/lib/jquery-1.12.4.min.js"></script>
+    <script src="./js/vue/vue.js"></script>
+    
+    <style>
+        h1 {text-align:center;}
+        #box {width:500px;line-height:170%;font-size:15px;margin:0 auto;}
+    </style>
+</head>
+<body>
+    <h1>Vue 컴포넌트 등록, 템플릿트 내용 추가하기</h1>
+
+    <div id="app">
+        <!-- v-bind(바인드해라):txtbind(txtbind라는 속성을) -->
+        <comp v-bind:txtbind="txt"></comp>
+    </div>
+
+    <script>
+        //자식
+        Vue.component("comp",{
+            // props = property, 속성 / :뒤에 대괄호써줌 / 대괄호 안에 속성값 입력
+            props : [ "txtbind" ], //property 속성, 바인드할 속성을 등록해야만 사용할 수 있음 = txtbind
+            template : `\
+                        <div id="box">\
+                            <ol>\
+                                <li>{{ txtbind }}</li>\
+                                <li>{{ txtbind }}</li>\
+                                <li>{{ txtbind }}</li>\
+                                <li>{{ txtbind }}</li>\
+                                <li>{{ txtbind }}</li>\
+                                <li>{{ txtbind }}</li>\
+                                <li>{{ txtbind }}</li>\
+                                <li>{{ txtbind }}</li>\
+                                <li>{{ txtbind }}</li>\
+                                <li>{{ txtbind }}</li>\
+                                <li>{{ txtbind }}</li>\
+                                <li>{{ txtbind }}</li>\
+                                <li>{{ txtbind }}</li>\
+                                <li>{{ txtbind }}</li>\
+                            </ol>\
+                        </div>\
+                        ` 
+                        // `` = 백틱, 따옴표랑 같은 역할
+                        // 줄의 끝은 역슬래쉬 \로 구분해줌, 맨 끝은 백틱으로 구분해줘서 안 써도 됨
+        });
+
+        //부모
+        const obj = new Vue({
+            el : "#app",
+            data : {
+                txt : `컴포넌트 내용!!! 메시지!!!`
+            }
+        });
+    </script>
+</body>
+</html>
