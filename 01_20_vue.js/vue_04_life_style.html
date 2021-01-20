@@ -8,12 +8,41 @@
     <script src="./js/vue/vue.js"></script>
 </head>
 <body>
-    <h2></h2>
+    <h1>Vue.js 라이프 사이클</h1>
+    <div id="app">{{ txt }}</div> <!-- {{ txt }} : 뷰 요소를 만들어줌, 중괄호 안에 입력되어 나옴 -->
     <script>
-        const app = new Vue({
-            el : "",
-            data = {
-
+        const obj = new Vue({
+            el : "#app",
+            data : {
+                txt : "Vue 라이프 사이클 익히기"
+            },
+            /* 만들었으면 */
+            beforeCreate : function(){
+                console.log("beforeCreate");
+            },
+            created : function(){
+                console.log("created");
+            },
+            /* 화면에 부착하기 */
+            beforeMount : function(){
+                console.log("beforeMount");
+            },
+            mounted : function(){
+                console.log("mounted");
+            },
+            /* 수정하고 */
+            beforeUpdate : function(){
+                console.log("beforeUpdate");
+            },
+            updated : function(){
+                console.log("updated");
+            },
+            /* 삭제할 수 있게 */
+            beforeDestroy : function(){
+                console.log("beforeDestroy");
+            },
+            destroyed : function(){
+                console.log("destroyed");
             }
         });
     </script>
