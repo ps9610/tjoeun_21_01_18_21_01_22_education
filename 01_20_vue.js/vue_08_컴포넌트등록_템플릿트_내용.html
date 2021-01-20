@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue 컴포넌트 등록, 템플릿트 내용 추가하기</title>
+    <script src="./js/lib/jquery-1.12.4.min.js"></script>
+    <script src="./js/vue/vue.js"></script>
+    
+    <style>
+        h1 {text-align:center;}
+    </style>
+</head>
+<body>
+    <h1>Vue 컴포넌트 등록, 템플릿트 내용 추가하기</h1>
+
+    <div id="app">
+        <comp></comp>
+    </div>
+
+    <script>
+        //자식
+        Vue.component("comp",{
+            // props = property, 속성 / :뒤에 대괄호써줌 / 대괄호 안에 속성값 입력
+            props : [ "txt" ], //property 속성
+            template : "<h1><mark> {{ txt }} <i>성공</i></mark></h1>"
+        });
+
+        //부모
+        const obj = new Vue({
+            el : "#app",
+            data : {
+                txt : "컴포넌트 내용!!!"
+            }
+        });
+    </script>
+</body>
+</html>

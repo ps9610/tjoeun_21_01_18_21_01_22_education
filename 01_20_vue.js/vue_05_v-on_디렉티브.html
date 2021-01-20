@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Life Style</title>
+    <script src="./js/lib/jquery-1.12.4.min.js"></script>
+    <script src="./js/vue/vue.js"></script>
+</head>
+<body>
+    <h1>버튼 이벤트 여러개 등록하기</h1>
+    <!-- 버튼 이벤트를 하기 위함 -->
+    <!-- 로딩시에 마운트되는 요소들 (뷰(View, 보여지는) 요소라고함){{}}, 선택자 만들기 
+         객체 유효성 범위(scope) : 실행되는 범위를 선언하고 실행해줌-->
+    <div id="webApp">
+        <button v-on="{click:event1Fn, mousedown:event2Fn, mouseup:event3Fn, mouseout:event4Fn, mouseover:event5Fn}">버튼 여러개 이벤트 등록</button>
+        <!-- v-on="click" 약자 = @on="click" -->
+        <!-- 위에 함수가 이런형태 
+            button.on({
+            click : function(){
+
+            }
+        }) -->
+        <h2>{{ txt1 }}</h2>
+        <h3>{{ txt2 }}</h3>
+        <h4>{{ txt3 }}</h4>
+    </div>
+    <!-- 모델 뷰 -->
+    <!-- 1. el | 2. data = 인스턴스들 | 필수 설정해야 함 -->
+    <!-- 스토리 보드 
+        1. 처음 로딩시에 글자가 나온다 
+            = txt가 마운트되었다고 함,
+        돔이 생성되었으니 클릭이벤트가 이루어짐 -->
+    <script>
+        let cnt = 0;
+        const obj = new Vue({
+            el : "#webApp",
+            data : {    //모델
+                txt1 : "하나의 버튼 이벤트 등록1",
+                txt2 : "하나의 버튼 이벤트 등록2",
+                txt3 : "하나의 버튼 이벤트 등록3"
+            },
+            methods : {
+                event1Fn : function(){
+                    console.log("이벤트1 : 클릭이벤트");
+                    this.txt1 += " 클릭시 나오는 추가 내용입니다."; 
+                    //this.txt1 = txt1에 ""의 내용이 누적되어 마운트됨
+                },
+                event2Fn : function(){
+                    console.log("이벤트2 : 마우스다운이벤트");
+                    cnt++; //함수를 호출할때마다 1씩 증가
+                    this.txt2 += ", " + cnt;
+                    /* this.txt2 = cnt를 호출할 때마다 1씩 증가한 것이 txt2에 카운트(누적)되어 나옴 */
+                },
+                event3Fn : function(){
+                    console.log("이벤트3 : 마우스업이벤트");
+                },
+                event4Fn : function(){
+                    console.log("이벤트4 : 마우스아웃이벤트");
+                },
+                event5Fn : function(){
+                    console.log("이벤트5 : 마우스오버이벤트");
+                },
+            }
+        });
+    </script>
+</body>
+</html>

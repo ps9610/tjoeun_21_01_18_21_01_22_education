@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue 버튼이벤트 전파차단</title>
+    <script src="./js/lib/jquery-1.12.4.min.js"></script>
+    <script src="./js/vue/vue.js"></script>
+    
+    <style>
+        #app {width:100%;}
+        #app > div {background:#bbd;width:600px;height:400px;margin:0 auto;}
+        #app > div > div {background:#bdb;width:200px;height:200px;margin:0 auto;}
+        #app > div > div > button {display:block;background:#ddb;width:150px;height:50px;margin:0 auto;text-align:center;}
+
+    </style>
+</head>
+<body>
+    <h1>버튼 이벤트 차단하기</h1>
+
+    <div id="app">
+        <!-- 부모 -> 자식에게로 버튼이 전달됨
+            * 전파 차단은 네이티브 방식으로도 가능함 *
+            - preventDefault()(자식에게 전파 차단) = v-on:click.prevent
+                ㄴ>한번만 클릭되게 설정 = v-on:click.once.prevent
+            - stopPropagation()(부모에게 전파 차단) = v-on:click.stop 
+            - event3($event) : 매개변수 전달 | $ 들어감 주의!-->
+        <div v-on:click.once.prevent="event1" >
+            <div v-on:click.stop="event2" >
+                <button v-on:click="event3($event)">버튼 클릭 이벤트 차단하기</button>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        let cnt = 0;
+        const obj = new Vue({
+            el : "#app",
+            /* data : {
+                꾸며주거나 초기에 이뤄질게 없으면 = 뷰 요소가 없으면 지금 같이 data가 없는 경우도 있음
+            }, */
+            methods : {
+                event1 : function(){
+                    console.log("버튼1 이벤트 발생");
+                    cnt++;
+                    console.log(cnt);
+                },
+                event2 : function(){
+                    console.log("버튼2 이벤트 발생");
+                },
+                event3 : function(e){ //argument 받기
+                    if(e)/* e값이 들어오면 = e 값이 참이면 */ {
+                        // e.preventDefault(); 자식에게 전달 차단
+                        e.stopPropagation(); 
+                        console.log("버튼3 이벤트 발생");
+                    }
+                },
+            }
+        });
+    </script>
+</body>
+</html>

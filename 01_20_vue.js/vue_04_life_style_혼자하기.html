@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Life Style</title>
+    <script src="./js/lib/jquery-1.12.4.min.js"></script>
+    <script src="./js/vue/vue.js"></script>
+</head>
+<body>
+    <h1>Vue.js 라이프 사이클</h1>
+    <div id="app">{{ txt }}</div> <!-- {{ txt }} : 뷰 요소를 만들어줌, 중괄호 안에 입력되어 나옴 -->
+    <script>
+        const obj = new Vue({
+            el : "#app",
+            data : {
+                txt : "뷰 라이프 사이클 연습"
+            },
+            beforeCreate : function(){
+                console.log("beforeCreate");
+            },
+            created : function(){
+                console.log("create");
+            },
+            beforeMount : function(){
+                console.log("beforeMount");
+            },
+            mounted : function(){
+                console.log("mounted");
+            },
+            beforeUpdate : function(){
+                console.log("beforeUpdate");
+            },
+            updated : function(){
+                console.log("updated");
+            },
+            beforeDestroy : function(){
+                console.log("beforeDestroy");
+            },
+            destroyed : function(){
+                console.log("destroyed");
+            }
+        });
+    </script>
+</body>
+</html>
