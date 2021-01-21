@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue 폼속성 v-model 디렉티브</title>
+    <script src="./js/lib/jquery-1.12.4.min.js"></script>
+    <script src="./js/vue/vue.js"></script>
+    
+    <style>
+        body {text-align:center;}
+        #app {padding-top:50px;}
+        h1 {color:#3bc;font-size:40px;margin-top:50px;}
+        input[type="text"] {width:600px;height:30px;background:#f9f9f9;border:1px solid #ccc;font-size:17px;padding:10px;color:#222;}
+        input[type="text"]::placeholder {color:#aaa;font-size:17px;}
+    </style>
+</head>
+<body>
+    <h1>vue 폼속성 v-model 디렉티브</h1>
+    <div id="app">
+        <input type="text" v-model="msg" placeholder="입력상자내용입니다.">
+        <h2>입력 메시지 내용은 {{msg}}입니다.</h2> <!--  입력된 글씨가 바로 나오는게 뷰의 특징 -->
+    </div>
+    <script>
+        const obj = new Vue({
+            el:"#app",
+            data:{
+                msg : ``
+            },
+        })
+    </script>
+</body>
+</html>

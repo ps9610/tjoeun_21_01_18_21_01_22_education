@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue 폼속성 v-model 메모장 디렉티브</title>
+    <script src="./js/lib/jquery-1.12.4.min.js"></script>
+    <script src="./js/vue/vue.js"></script>
+    
+    <style>
+        body {text-align:center;}
+        #app {padding-top:50px;}
+        h1 {color:#3bc;font-size:40px;margin-top:50px;}
+        h2 {color:#bbd;font-size:15px;width:500px;height:250px;margin:0 auto;overflow-y:scroll;border:1px solid #ccc;background:#f6f6f6;}
+        textarea {width:800px;height:300px;border:1px solid #ccc;background:#f6f6f6;font-size:17px;}    
+    </style>
+</head>
+<body>
+    <h1>vue 폼속성 v-model 메모장 디렉티브</h1>
+    <div id="app">
+        <h2>입력 메시지 내용은 {{msg}}입니다.</h2> <!--  입력된 글씨가 바로 나오는게 뷰의 특징 -->
+        <textarea v-model="msg" name="memo" id="memo"></textarea> <!-- textarea는 줄바꾸면 그 공백도 입력이 됨 -->
+    </div>
+    <script>
+        const obj = new Vue({
+            el:"#app",
+            data:{
+                msg : `메모장`
+            },
+        })
+    </script>
+</body>
+</html>

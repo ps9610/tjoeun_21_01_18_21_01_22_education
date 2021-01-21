@@ -25,7 +25,9 @@
                 ㄴ>한번만 클릭되게 설정 = v-on:click.once.prevent
             - stopPropagation()(부모에게 전파 차단) = v-on:click.stop 
             - event3($event) : 매개변수 전달 | $ 들어감 주의!-->
-        <div v-on:click.once.prevent="event1" >
+            <!-- v-on: 의 약식 = @ -->
+            <!-- @click.once.prevent="event1"도 가능 -->
+            <div @click.once.prevent="event1" >
             <div v-on:click.stop="event2" >
                 <button v-on:click="event3($event)">버튼 클릭 이벤트 차단하기</button>
             </div>

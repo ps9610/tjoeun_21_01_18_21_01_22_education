@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-if 디렉티브 조건문</title>
+    <script src="./js/lib/jquery-1.12.4.min.js"></script>
+    <script src="./js/vue/vue.js"></script>
+    
+    <style>
+        h1 {color:#3bc;font-size:40px;}
+        h2 {color:#cb3;font-size:20px;}
+    </style>
+</head>
+<body>
+    <h1>v-if 디렉티브 조건문</h1>
+    <div id="app">
+        <h2 v-if="t"><!-- t 객체 사용, ; 아니고 , 사용 -->t 토글변수가 참이면 이 타이틀이 보입니다.</h2>
+    </div>
+    <script>
+        var obj = new Vue({
+            el : "#app",
+            data : {
+                /* t : false   // 토글변수(속성=Property) t : 값(Value)이 false; */
+                t : true   // 토글변수(속성=Property) t : 값(Value)이 false;
+            },
+            methods :{
+
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-if 디렉티브 조건문</title>
+    <script src="./js/lib/jquery-1.12.4.min.js"></script>
+    <script src="./js/vue/vue.js"></script>
+    
+    <style>
+        h1 {color:#3bc;font-size:40px;}
+        h2 {color:#cb3;font-size:20px;}
+    </style>
+</head>
+<body>
+    <h1>v-if 디렉티브 조건문</h1>
+    <div id="app">
+        <h2 v-if="t2"><!-- t 객체 사용, ; 아니고 , 사용 -->t 토글변수가 참이면 이 타이틀이 보입니다.</h2>
+        <button @click="toggleFn">버튼을 클릭하세요.</button>
+    </div>
+    <script>
+        let t = false; //값이 바뀌려면 변하는거니까 변수사용해주기, 객체 내에서는 세미콜론 사용하면 안됨. 함수는 가능쓰
+        var obj = new Vue({
+            el : "#app",
+            data : {
+                t//t : false,   // 토글변수(속성=Property) t : 값(Value)이 false;
+            },
+            methods :{
+                toggleFn : function(){
+                    if(this.t === true){
+                        //불러올때는 변수앞에 this.를 해줘야 객체에서 사용이 가능함
+                        /*  var brando = {
+                              init : function(){}  
+                            }
+                            brando.init();쓸 때 처럼 똑같은 객체사용법 적용하면 됨  */
+                            
+                        this.t = false;
+                    }
+                    else{
+                        this.t = true;
+                    }
+                
+                }
+            }
+        });
+    </script>
+</body>
+</html>

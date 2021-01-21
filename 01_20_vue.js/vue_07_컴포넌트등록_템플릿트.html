@@ -16,8 +16,9 @@
     <h1>Vue 컴포넌트 등록, 템플릿트</h1>
     <!-- 1. html -->
     <!-- 2. script -->
-        <div id="app">
+        <div id="app"> <!-- 여기서부터 뷰가 실행할 영역 = Vue scope -->
             <h2>{{ txt }}</h2>
+            <button v-on:click="callFn">이벤트 추가버튼</button>
             <babo></babo> <!-- babo라는 컴포넌트 요소 -->
             <!-- xml : 바보라는 존재하지 않는 새로운 가상 태그(가상요소 = jsx)를 만들어준다.
                  = 컴포넌트가 들어갈 위치를 잡아줌 -->
@@ -25,19 +26,26 @@
     <script>
         //자식
         //전역 컴포넌트
+        //상위에서 하위에게 전달하는 것을 props라고 한다.
         //Vue.component("등록할 컴포넌트 이름", {})
         Vue.component("babo", { //객체를 사용하여 외부에서 사용함 = 전역 컴포넌트
             //template : "" -> ""안에 태그가 들어가면 됨
                 // ㄴ> 돔 요소로 적용되면서 babo라는 태그를 완벽하게 대신함
-            template : "<h3><i>전역 컴포넌트 등록할 템플릿트 요소 내용!!!</i></h3>"
+            template : /* "<h3><i>전역 컴포넌트 등록할 템플릿트 요소 내용!!!</i></h3>" */
+                        `<h3><i>전역 컴포넌트 등록할 템플릿트 요소 내용!!!</i></h3>`
         }); 
         
         //부모
-        //모델 뷰 작업 (지역 컴포넌트)
+        //모델 뷰 작업 (지역 컴포넌트 : 생성된 뷰 객체 안에 위치해있음)
         const obj = new Vue({
             el : "#app", //scope(요소 범위)
             data : {
-                txt : "Component(컴포넌트) & Template(템플릿트)"
+                txt : `Component(컴포넌트) & Template(템플릿트)`
+            },
+            methods : {
+                callFn : function(){
+                    this.txt  += ` 버튼 클릭 시 추가 내용 입니다.`
+                }
             }
         });
     </script>

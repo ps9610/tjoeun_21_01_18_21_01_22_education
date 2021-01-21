@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-if 디렉티브 조건문</title>
+    <script src="./js/lib/jquery-1.12.4.min.js"></script>
+    <script src="./js/vue/vue.js"></script>
+    
+    <style>
+        body {text-align:center;}
+        h1 {color:#3bc;font-size:40px;}
+        h2 {color:#cb3;font-size:20px;}
+        img {width:auto;height:400px;}
+    </style>
+</head>
+<body>
+    <h1>v-if 디렉티브 조건문</h1>
+    <div id="app">
+        <button @click="toggleFn">버튼을 클릭하세요.</button>
+        <h2 v-if="img1"><img src="./img/3660588729_ms8t69UG_20190927052743.png" alt=""></h2>
+        <h2 v-if="img2"><img src="./img/gall_22.jpg" alt=""></h2>
+    </div>
+    <script>
+       
+        var obj = new Vue({
+            el : "#app",
+            data : {
+                img1 : true,
+                img2 : false
+            },
+            methods :{
+                toggleFn : function(){
+                    if(this.img1 === true){
+                        this.img1 = false;
+                        this.img2 = true;
+                    }
+                    else if(this.img1 === false){
+                        this.img1 = true;
+                        this.img2 = false;
+                    }
+                
+                }
+            }
+        });
+    </script>
+</body>
+</html>
