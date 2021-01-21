@@ -1,0 +1,28 @@
+닷홈 어드민 관리자 페이지 로그인
+PHP / MYSQL 아파치서버 & 데이터베이스서버
+
+http://sohye.dothome.co.kr/myadmin
+
+php 서버사이드 스크립트 언어
+
+1. 데이터베이스 각 개인 계정 아이디 - 닷홈서버
+
+서버 이름(servername) : localhost
+사용자 이름(username) :sohye
+비밀번호 : qkthgp6438!
+데이터베이스 이름(dbname) :sohye
+
+$servername = localhost
+$username = sohye
+$password = qkthgp6438!
+$dbname = sohye
+
+2. 데이터베이스 커넥트 접속
+컨넥트 변수 = mysqli(mysql요즘버전은i를붙임)_connect(서버이름, 사용자이름, 비밀번호, 데이터베이스 이름)
+// $conn = mysqli_connect(localhost, sohye, qkthgp6438!, sohye) -> 이렇게 직접 정보를 넣는것보다 변수화 시켜서 넣는게 좋음 
+
+$conn = mysqli_connect($servername, $username, $password, $dbname) -> 이렇게 직접 정보를 넣는것보다 변수화 시켜서 넣는게 좋음 
+    ㄴ> 권장사항!
+
+3. 닷홈에 로그인 폴더 만듦 | 폴더이름 : _login 안에 PHP 파일 넣음
+    파일만 넣은 것을 실행할 땐 http://sohye.dothome.co.kr/_login/select.php
