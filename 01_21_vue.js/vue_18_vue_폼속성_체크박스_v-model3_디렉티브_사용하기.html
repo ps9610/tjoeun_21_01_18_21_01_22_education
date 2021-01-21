@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue 폼속성 v-model 체크박스 디렉티브</title>
+    <script src="./js/lib/jquery-1.12.4.min.js"></script>
+    <script src="./js/vue/vue.js"></script>
+    
+    <style>
+        body {text-align:center;}
+        #app {padding-top:50px;}
+        h1 {color:#3bc;font-size:40px;margin-top:50px;}
+        h2 {color:#bbd;font-size:15px;width:500px;height:250px;margin:0 auto;overflow-y:scroll;border:1px solid #ccc;background:#f6f6f6;white-space:wrap;}
+        span {display:inline-block;margin:0 10px;}
+        span input[type="checkbox"] {display:inline-block;width:15px;height:15px;border:1px solid #333;}
+
+    </style>
+</head>
+<body>
+    <h1>vue 폼속성 v-model 체크박스 디렉티브</h1>
+    <div id="app">
+        <div class="chk-wrap">
+            <span>
+                <input v-model="chk1" type="checkbox" name="chk1" id="chk1" value="영화">
+                <label for="chk1">{{ chk1 }}</label>
+            </span>
+            <span>
+                <input v-model="chk2" type="checkbox" name="chk2" id="chk2" value="여행">
+                <label for="chk2">{{ chk2 }}</label>
+            </span>
+        </div>
+    </div>
+    <script>
+        const obj = new Vue({
+            el:"#app",
+            data:{
+                chk1:false,
+                chk2:false
+            }
+        })
+    </script>
+</body>
+</html>

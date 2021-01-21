@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue 폼속성 v-model select박스 목록상자 디렉티브</title>
+    <script src="./js/lib/jquery-1.12.4.min.js"></script>
+    <script src="./js/vue/vue.js"></script>
+    
+    <style>
+        body {text-align:center;}
+        #app {padding-top:50px;}
+        h1 {color:#3bc;font-size:40px;margin-top:50px;}
+        select {width:200px;height:50px;padding:10px;border:1px solid #ccc;background:#fff;appearance:none;}
+
+    </style>
+</head>
+<body>
+    <h1>vue 폼속성 v-model select박스 목록상자 디렉티브</h1>
+    <div id="app">
+        <select v-model="selectList" name="listBox" id="listBox">
+            <option v-for="i in list" v-bind:value="i.value" selected>{{ i.text }}</option> <!-- 반복 출력 객체 = option, 속성 키 i.값 -->
+
+                <!-- <option value="라볶이">라볶이</option> -->
+                <!-- <option value="쫄면">쫄면</option> -->
+                <!-- <option value="라면">라면</option> -->
+                <!-- <option value="평양갈비찜">평양갈비찜</option> -->
+                <!-- <option value="부대찌개">부대찌개</option> -->
+            
+        </select>
+        <h2>{{ selectList }}(을)를 선택하셨습니다.</h2>
+    </div>
+
+    <script>
+        const obj = new Vue({
+            el : "#app",
+            data : {
+                selectList/* selected된 것을 v-model에 연결해준다. */ : "부대찌개", //선택하는방법, 체크박스랑 다르게 각괄호[] 없애고 사용해야 선택이 되어있고, 기본값이 나옴
+                list:[
+                    {text:"라볶이", value:"라볶이"},
+                    {text:"쫄면", value:"쫄면"},
+                    {text:"라면", value:"라면"},
+                    {text:"평양갈비찜", value:"평양갈비찜"},
+                    {text:"부대찌개", value:"부대찌개"}
+                    ]
+                }
+        })
+    </script>
+    
+</body>
+</html>
