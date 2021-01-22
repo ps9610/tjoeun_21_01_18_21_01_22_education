@@ -7,7 +7,7 @@
     //데이터베이스 서버의 접속 정보 변수 등록
     $servername = localhost;
     $username   = sohye;
-    $password   = qkthgp6438!;
+    $password   = qkthgp6438;
     $dbname     = sohye; 
 
     $conn = mysqli_connect($servername, $username, $password, $dbname);

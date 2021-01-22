@@ -36,3 +36,5 @@ $conn = mysqli_connect($servername, $username, $password, $dbname) -> 이렇게 
 * 데이터베이스 테이블 구상(w_member) *
 INSERT INTO `w_member` (`id`, `pw`, `name`, `phone`, `email`) 
             VALUES     ('sohye1', '1234', '박소혜', '010-2962-0395', 's1good@email.com');
+
+create / insert / select / update / delete
